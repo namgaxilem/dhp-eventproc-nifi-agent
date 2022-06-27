@@ -15,9 +15,10 @@ public class WebSecurityConfig extends AadResourceServerWebSecurityConfigurerAda
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         super.configure(http);
-        http.authorizeRequests((requests) -> requests.anyRequest().authenticated());
-        http
-                .csrf()
-                .disable();
+        http.authorizeRequests().anyRequest().permitAll();
+//        http.authorizeRequests((requests) -> requests.anyRequest().authenticated());
+//        http
+//                .csrf()
+//                .disable();
     }
 }
